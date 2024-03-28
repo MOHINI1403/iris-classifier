@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Classification Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0; /* Light gray */
+        }
+        .result-container {
+            background-color: #fff; /* White */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .predicted_name{
+            font-weight:bold;
+        }
+        .flower-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Iris Classification Result</h1>
+        <p>The predicted species is: <span class='predicted_name'>{{ predicted_species }}</span></p>
+        <img src="{{ url_for('static', filename='images/' + predicted_species.lower() + '.jpeg') }}" alt="Predicted Species Image" class="flower-image">
+    </div>
+</body>
+</html>
+
